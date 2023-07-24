@@ -1,0 +1,292 @@
+/* .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+    border: none;
+} */
+
+.MuiOutlinedInput-notchedOutline {
+    border-width: 1px !important;
+    border-color: #005F59 !important;
+  }
+
+  .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #005F59 !important;
+  }
+
+  ::placeholder {
+    color: #ab34c5;
+  }
+  
+  #inputID::placeholder {
+    color: #ab34c5;
+  }
+
+.MenuItem{
+    color: #ab34c5;
+}
+
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+    fill: #005F59 !important;
+}
+
+
+.landing-banner-section-strip-in-fresher-job-fair{
+    background-color: #E9FEFF;
+    /* height: 188px; */
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    margin-top: 10px;
+    border-top: 12px solid #FECD08;
+  }
+
+  .landing-banner-section-strip-in-fresher-job-fair-small{
+    background-color: #FECD08;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 30px;
+    margin-top: 10px;
+    margin: auto;
+  }
+
+.landing-banner-section-strip-in-fresher-job-fair>div{
+    display: flex;
+    justify-content: space-between;
+  }
+.personImage{
+    width: 530px;
+    margin-top: 45px !important;
+    margin-bottom: -10px !important;
+    z-index: -9 !important;
+    color: (255, 255, 255, 1);
+  }  
+
+.landing-banner-section-strip-in-fresher-job-fair>div>div{
+    display: flex;
+    gap: 15px;
+
+  }
+
+
+.landing-banner-section-strip-in-fresher-job-fair-small>div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 10px auto !important;
+    width: 80%;
+  }
+
+.landing-banner-section-strip-in-fresher-job-fair-small>div>div{
+    display: flex;
+    /* align-items: center; */
+    gap: 15px;
+  }
+
+
+.landing-banner-section-strip-in-fresher-job-fair-innercontainer>h3{
+    line-height: 37px;
+    font-weight: 600;
+    font-size: 36px;
+    font-family: 'Lexend';
+    color: #005F59;
+  }
+
+
+.landing-banner-section-strip-in-fresher-job-fair-innercontainer>p{
+    line-height: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: 'Lexend';
+    color: #005F59;
+  }
+
+
+.landing-banner-section-strip-in-fresher-job-fair-innercontainer-medium>h3{
+    line-height: 37px;
+    font-weight: 600;
+    font-size: 25px;
+    font-family: 'Lexend';
+    color: #005F59;
+  }
+
+
+.landing-banner-section-strip-in-fresher-job-fair-innercontainer-medium>p{
+    line-height: 18px;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: 'Lexend';
+    color: #005F59;
+  }
+
+.img-of-our-partners{
+    width: 76.66px;
+    height: 54.4px;
+}
+.img-container{
+    width: 179.29px;
+    height: 127.36px;
+    box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.09);
+    background: linear-gradient(93.07deg, rgba(254, 205, 8, 0.014) 2.11%, rgba(0, 95, 89, 0.038) 97.56%);
+    border: none;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+}
+.img-of-universities{
+    width:50px;
+    /* height: 50px; */
+}
+.universities-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Univercity_Logo{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.University_Inside_div{
+    background: linear-gradient(93.07deg, rgba(254, 205, 8, 0.021) 2.11%, rgba(0, 95, 89, 0.057) 97.56%);
+    margin: 20px;
+    width: 253px;
+    height: 80px;
+    border-radius: 13px;
+    box-shadow: 0px 4px 19px 0px #00000017;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.University_logo{
+    margin-top: 10px;
+    margin-left: 15px;
+    /* width: 50px; */
+}
+
+.Univercity_name{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: Lexend;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.carouselContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card1{
+    width: 590px;
+    height: 330px;
+    background-color: white;
+    border-radius: 29px;
+    padding: 10px;
+}
+
+.paragraph-inside-carousel{
+    width: 522px;
+    height: 136px;
+    font-family: Lexend;
+    font-weight: 400;
+    font-size: 20px;
+    margin: auto;
+    top:20px !important;
+    line-height: 34px;
+}
+
+.place-para-caro{
+    width: 161px;
+    height: 18px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17.5px;
+}
+
+.place-in-caro{
+    width: 62px;
+    height: 18px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17.5px;
+}
+
+.google-img-caro{
+    width: 101px;
+    height: 34px;
+}
+
+.days-caro{
+    width: 66px;
+    height: 28px;
+    border-radius: 13px;
+    background-color: #FECD08;
+    padding: 12px;
+    display: flex;
+}
+
+.emp-name-caro{
+    color: #FFFFFF;
+    width: 158px;
+    height: 30px;
+    font-family: Lexend;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.customer-possition-caro{
+    width: 293px;
+    color: #FFFFFF80;
+    height: 20px;
+    font-family: Lexend;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.linkden-caro{
+  display: flex;
+  justify-content: space-around;
+    background-color: #FECD08;
+    width: 100px;
+    height: 25px;
+    border-radius: 14px;
+    padding: 5px;
+}
+.card{
+  width: 590px;
+    height: 330px;
+    background-color: white;
+    border-radius: 29px;
+    padding: 10px;
+}
+
+.linkden-name-caro{
+    color: #005F59;
+    width: 58px;
+    height: 18px;
+    font-family: Lexend;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.5px;
+}
+.emp-main-box{
+  margin-top: 20px;
+  height: 120px;
+  width: 443px;
+  display: flex;
+  justify-content: space-between;
+}

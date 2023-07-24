@@ -1,0 +1,117 @@
+.Table-row-data{
+    width:100%;
+}
+.Table-data-1-data{
+    color: rgba(91, 91, 91, 1);
+    font-family: lexend;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22.5px;
+    background:linear-gradient(180deg,rgba(14, 95, 89, 0.1) 0%, rgba(14, 95, 89, 0.1) 100%);
+    width:245px;
+}
+.fresher_outer_container{
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+.fresher_outer_container::-webkit-scrollbar {
+    width: 5px;
+  }
+  .text-primary1{
+    font-family: lexend;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    align-items: center;
+    color:rgba(255, 255, 255, 1) !important;
+  }
+  .fresher_placement_company_inner_map_container1 {
+    /* margin-top: 50px; */
+    overflow: scroll;
+    height: 400px;
+    overflow-x: hidden;
+    min-height: 1146px;
+}
+
+.fresher_placement_company_inner_map_container1::-webkit-scrollbar{
+    display: none;
+  }
+  .fresher_placement_company_inner_main_container2 {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.09);
+    border-radius: 13px;
+    padding: 5px 12px 0px 15px;
+    margin: 10px 0px;
+}
+
+.fresher_placement_company_flex_second_container3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 20px */
+}
+
+.upcoming_interview_fresher_inner_container{
+    background: linear-gradient(180deg,rgba(14, 95, 89, 0.06) 0%, rgba(254, 205, 8, 0.014) 100%);
+box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.09);
+border-radius: 13px;
+margin: 20px auto;
+padding: 10px;
+}
+.tab-content1 {
+    width: 89%;
+  
+    /* margin-left: 20px; */
+  }
+  .profileUpdate{
+    font-family: lexend;
+    font-weight: 400;
+    font-size: 24px;
+    color:rgba(91, 91, 91, 1);
+    line-height: 26px;
+  }
+  
+  
+.eligibility-form-label-container1>label{
+    color: #0E5F59;
+font-family: 'Lexend';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+/* text-align: center; */
+
+}
+.log-out-div2 {
+    margin-top: 200px;
+    width: fit-content;
+    cursor: pointer;
+  }
+  .verticle-timeliness .timelineqq:before {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 11px;
+    width: 2px;
+    height: 91%;
+    background: #0e5f59;
+}
+.h2Document{
+    font-family: "lexend";
+    font-weight: 700;
+    size: 32px;
+    line-height: 35px;
+    color: rgba(0, 95, 89, 1);
+}
+.h2Identication{
+    font-family: "lexend";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    color: rgba(91, 91, 91, 1);
+}
