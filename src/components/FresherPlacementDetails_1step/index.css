@@ -30,6 +30,9 @@
     color: #0E5F59;
 }
 
+/* input[type="radio"] {
+    color: green;
+ } */
 
 .placement_details_instruction_question_container {
     display: flex;
@@ -79,4 +82,10 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+}
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked{
+    color: #0e5f59 !important;
+}
+.css-ahj2mt-MuiTypography-root{
+    color:#0e5f59;
 }

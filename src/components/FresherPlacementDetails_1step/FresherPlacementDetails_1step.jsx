@@ -10,6 +10,9 @@ import placementDetailsIcon from "../img/placement_details_first_icon.png";
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
 import backButton from "../img/back_button.png";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import next from "../img/next.png";
 
 const FresherPlacementDetailsFirstStep = () => {
@@ -135,30 +138,54 @@ const FresherPlacementDetailsFirstStep = () => {
               job for?
             </p>
           </div>
-          <div className="placement_details_radio_container">
-            <div>
-              <input type="radio" name="firstYes" id="firstYes" />
-              <label htmlFor="firstYes">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="firstNo" id="firstNo" />
-              <label htmlFor="firstNo">No</label>
-            </div>
+          <div
+            style={{ marginTop: "10px", paddingLeft: "25px" }}
+            className="placement_details_radio_container"
+          >
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="Yes"
+              name="radio-buttons-group"
+              style={{ display: "contents" }}
+            >
+              <div>
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+
+                {/* </RadioGroup> */}
+              </div>
+              <div>
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+                {/* <input type="radio" name="firstNo" id="firstNo" /> */}
+                {/* <label htmlFor="firstNo">No</label> */}
+              </div>
+            </RadioGroup>
           </div>
           <hr />
           <div className="placement_details_instruction_question_container">
             <img src={placementDetailsIcon} alt="placement_details_icon" />
             <p>Can you join the new job within 7 days?</p>
           </div>
-          <div className="placement_details_radio_container">
-            <div>
-              <input type="radio" name="firstYes" id="firstYes" />
-              <label htmlFor="firstYes">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="firstNo" id="firstNo" />
-              <label htmlFor="firstNo">No</label>
-            </div>
+          <div
+            style={{ marginTop: "10px", paddingLeft: "25px" }}
+            className="placement_details_radio_container"
+          >
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="Yes"
+              name="radio-buttons-group"
+              style={{ display: "contents" }}
+            >
+              <div>
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+
+                {/* </RadioGroup> */}
+              </div>
+              <div>
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+                {/* <input type="radio" name="firstNo" id="firstNo" /> */}
+                {/* <label htmlFor="firstNo">No</label> */}
+              </div>
+            </RadioGroup>
           </div>
           <hr />
           <div className="placement_details_instruction_question_container">
@@ -168,12 +195,13 @@ const FresherPlacementDetailsFirstStep = () => {
           <div
             style={{
               marginLeft: "40px",
+              paddingLeft: "10px",
               marginTop: "10px",
               marginBottom: "10px",
             }}
           >
             <StarRatings
-              rating={2}
+              rating={4}
               starRatedColor="gold"
               changeRating={changeRating}
               numberOfStars={5}
@@ -186,15 +214,27 @@ const FresherPlacementDetailsFirstStep = () => {
             <img src={placementDetailsIcon} alt="placement_details_icon" />
             <p>Are you comfortable working at the store level?</p>
           </div>
-          <div className="placement_details_radio_container">
-            <div>
-              <input type="radio" name="firstYes" id="firstYes" />
-              <label htmlFor="firstYes">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="firstNo" id="firstNo" />
-              <label htmlFor="firstNo">No</label>
-            </div>
+          <div
+            style={{ marginTop: "10px", paddingLeft: "25px" }}
+            className="placement_details_radio_container"
+          >
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="Yes"
+              name="radio-buttons-group"
+              style={{ display: "contents" }}
+            >
+              <div>
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+
+                {/* </RadioGroup> */}
+              </div>
+              <div>
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+                {/* <input type="radio" name="firstNo" id="firstNo" /> */}
+                {/* <label htmlFor="firstNo">No</label> */}
+              </div>
+            </RadioGroup>
           </div>
           <hr />
           <div className="placement_details_instruction_question_container">
@@ -204,15 +244,27 @@ const FresherPlacementDetailsFirstStep = () => {
               off between Monday to Friday)
             </p>
           </div>
-          <div className="placement_details_radio_container">
-            <div>
-              <input type="radio" name="firstYes" id="firstYes" />
-              <label htmlFor="firstYes">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="firstNo" id="firstNo" />
-              <label htmlFor="firstNo">No</label>
-            </div>
+          <div
+            style={{ marginTop: "10px", paddingLeft: "25px" }}
+            className="placement_details_radio_container"
+          >
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="Yes"
+              name="radio-buttons-group"
+              style={{ display: "contents" }}
+            >
+              <div>
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+
+                {/* </RadioGroup> */}
+              </div>
+              <div>
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+                {/* <input type="radio" name="firstNo" id="firstNo" /> */}
+                {/* <label htmlFor="firstNo">No</label> */}
+              </div>
+            </RadioGroup>
           </div>
           <hr />
           <div className="placement_details_instruction_question_container">
@@ -222,15 +274,27 @@ const FresherPlacementDetailsFirstStep = () => {
               off between Monday to Friday)
             </p>
           </div>
-          <div className="placement_details_radio_container">
-            <div>
-              <input type="radio" name="firstYes" id="firstYes" />
-              <label htmlFor="firstYes">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="firstNo" id="firstNo" />
-              <label htmlFor="firstNo">No</label>
-            </div>
+          <div
+            style={{ marginTop: "10px", paddingLeft: "25px" }}
+            className="placement_details_radio_container"
+          >
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="Yes"
+              name="radio-buttons-group"
+              style={{ display: "contents" }}
+            >
+              <div>
+                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+
+                {/* </RadioGroup> */}
+              </div>
+              <div>
+                <FormControlLabel value="No" control={<Radio />} label="No" />
+                {/* <input type="radio" name="firstNo" id="firstNo" /> */}
+                {/* <label htmlFor="firstNo">No</label> */}
+              </div>
+            </RadioGroup>
           </div>
           <hr />
           <div className="placement_details_instruction_question_container">
@@ -240,12 +304,13 @@ const FresherPlacementDetailsFirstStep = () => {
           <div
             style={{
               marginLeft: "40px",
+              paddingLeft: "10px",
               marginTop: "10px",
               marginBottom: "10px",
             }}
           >
             <StarRatings
-              rating={2}
+              rating={4}
               starRatedColor="gold"
               changeRating={changeRating}
               numberOfStars={5}

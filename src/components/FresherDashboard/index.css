@@ -115,3 +115,158 @@ line-height: 20px;
     line-height: 26px;
     color: rgba(91, 91, 91, 1);
 }
+.fresher_placement_details_profile_bottom_containeraaa {
+  position: relative;
+  /* background: linear-gradient(180deg, rgba(254, 205, 8, 0.07) 0%, rgba(14, 95, 89, 0.19) 100%); */
+  /* opacity: 0.5; */
+  /* border: 1px solid rgba(14, 95, 89, 0.1); */
+  border-radius: 0px;
+  /* padding-top: 30px; */
+  /* padding-top: 20px; */
+  display: flex;
+  /* align-items: center; */
+  /* width: 78% !important; */
+  /* justify-content: space-around; */
+  padding: 25px 10px 10px 65px ;
+
+}
+.fresher_placement_details_job_interviewssss {
+  font-family: 'Lexend';
+  /* font-style: normal; */
+  /* font-weight: 500; */
+  /* font-size: 13px; */
+  line-height: 138.5%;
+  margin: 0px;
+  /* color: #0E5F59; */
+  width: 100px;
+  display: flex;
+}
+.background_detail_submitssss{
+  /* display: flex; */
+    /* justify-content: center; */
+    padding-left: 25px;
+    align-items: center;
+    width: 100%;
+}
+/* .ReactTags__tags  */
+ .ReactTags__tagInputField{
+  padding-left: 10px;
+  width:450px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 1);
+  /* linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%); */
+  border: 2px solid rgba(0, 95, 89, 1);
+}
+.ReactTags {
+  /* Example Styles for React Tags*/
+  .app {
+    padding: 40px;
+    text-align: center;
+  }
+
+  /* Example Styles for React Tags*/
+
+  .container {
+    margin: auto;
+    width: 50%;
+  }
+  .ReactTags__tags {
+    position: relative;
+  }
+
+  .ReactTags__clearAll {
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    background: #f88d8d;
+    color: #fff;
+    border: none;
+  }
+
+  /* Styles for the input */
+  .ReactTags__tagInput {
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .ReactTags__tagInput input.ReactTags__tagInputField,
+  .ReactTags__tagInput input.ReactTags__tagInputField:focus {
+    width:450px;
+    height: 45px;
+    margin: 0;
+    font-size: 12px;
+    border: 1px solid #eee;
+    min-width: 150px;
+  }
+
+  .ReactTags__editInput {
+    border-radius: 1px;
+  }
+
+  .ReactTags__editTagInput {
+    display: inline-flex;
+  }
+
+  /* Styles for selected tags */
+  .ReactTags__selected span.ReactTags__tag {
+    padding: 10px 1px 10px 10px !important;
+    border: 1px solid #ddd;
+    background: rgba(0, 95, 89, 1);
+    border-radius: 42px !important;
+    gap: 20px !important;
+    color: white;
+    font-size: 16px !important;
+    font-family: lexend;
+    font-weight: 500;
+    align-items: center;
+    display: inline-block;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 2px;
+  }
+  .ReactTags__selected span.ReactTags__tag:first-child {
+    margin-left: 0px;
+  }
+  .ReactTags__selected a.ReactTags__remove {
+    color: #aaa;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .ReactTags__selected{
+    padding-top: 20px;
+  }
+
+  /* Styles for suggestions */
+  .ReactTags__suggestions {
+    position: absolute;
+    top:60px;
+  }
+  .ReactTags__suggestions ul {
+    list-style-type: none;
+    box-shadow: 0.05em 0.01em 0.5em rgba(0, 0, 0, 0.2);
+    background: white;
+    width: 200px;
+  }
+  .ReactTags__suggestions li {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+    margin: 0;
+  }
+  .ReactTags__suggestions li mark {
+    text-decoration: underline;
+    background: none;
+    font-weight: 600;
+  }
+  .ReactTags__suggestions ul li.ReactTags__activeSuggestion {
+    background: #b7cfe0;
+    cursor: pointer;
+  }
+
+  .ReactTags__remove {
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin: 0px 10px !important;
+    color: white;
+  }
+}

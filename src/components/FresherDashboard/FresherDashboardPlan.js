@@ -3,10 +3,13 @@ import NavbarTwo from "../common/navbar-two";
 import HomeGreen from "../img/home-green.png";
 import Home from "../img/home.png";
 import Document from "../img/document.png";
+import updateSumbit from "../img/updateSumbit.png";
 import selectedStatus from "../img/selectedStatus.png";
 import DocumentWhite from "../img/document-white.png";
 import process from "../img/process.png";
 import ProcessWhite from "../img/process-white.png";
+import submitbutton from "../img/submitbutton.png";
+import cancelButton from "../img/cancelButton.png";
 import SvgArrow from "../img/arrow-svg.svg";
 import logOut from "../img/icons/log-out.png";
 import MenuItem from "@mui/material/MenuItem";
@@ -42,7 +45,59 @@ import listIcon from "../img/list_icon.png";
 
 import getHired from "../img/get_hired.png";
 
+import { WithContext as ReactTags } from "react-tag-input";
+// import styles from "./ReactTags.module.scss";
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13,
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
 const FresherDashboardPlan = (isReadOnly) => {
+  const [tags, setTags] = useState([
+    { id: "Hadoop", text: "Hadoop" },
+    { id: "Other skill", text: "Other skill" },
+    { id: "Other skill", text: "Other skill" },
+    { id: "MS word", text: "MS word" },
+    { id: "Full stack developer", text: "Full stack developer" },
+    { id: "Other skill", text: "Other skill" },
+    { id: "MS word", text: "MS word" },
+  ]);
+  console.log("tagssss >>> ", tags);
+
+  const handleDelete = (i) => {
+    setTags(tags.filter((tag, index) => index !== i));
+  };
+
+  const handleAddition = (tag) => {
+    setTags([...tags, tag]);
+  };
+
+  const handleDrag = (tag, currPos, newPos) => {
+    const newTags = [...tags].slice();
+
+    newTags.splice(currPos, 1);
+    newTags.splice(newPos, 0, tag);
+
+    setTags(newTags);
+  };
+
+  const handleTagClick = (index) => {
+    console.log("The tag at index " + index + " was clicked");
+  };
+
+  const onClearAll = () => {
+    setTags([]);
+  };
+
+  const onTagUpdate = (i, newTag) => {
+    const updatedTags = tags.slice();
+    updatedTags.splice(i, 1, newTag);
+    setTags(updatedTags);
+  };
+
   let navigate = useNavigate();
   const [selectedFile0, setSelectedFile0] = useState("");
   const [selectedFile1, setSelectedFile1] = useState("");
@@ -332,7 +387,30 @@ const FresherDashboardPlan = (isReadOnly) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const optionss = ["10th", "12th", "Gradution", "Post Gradution"];
+  const onOptionChangeHandler = (event) => {
+    console.log("User Selected Value - ", event.target.value);
+  };
+  const optionss1 = ["Ten", "Twenty", "Thirty", "Fourty"];
+  const onOptionChangeHandler1 = (event) => {
+    console.log("User Selected Value - ", event.target.value);
+  };
+  const optionss2 = ["Fifty", "Sixty", "Seventy", "Eighty", "Ninty", "Hundred"];
+  const onOptionChangeHandler2 = (event) => {
+    console.log("User Selected Value - ", event.target.value);
+  };
+  const optionss3 = [
+    "Ten 1",
+    "Ten 2",
+    "Ten 3",
+    "Ten 4",
+    "Ten 5",
+    "Ten 6",
+    "Ten 7",
+  ];
+  const onOptionChangeHandler3 = (event) => {
+    console.log("User Selected Value - ", event.target.value);
+  };
   return (
     <React.Fragment>
       <Modal
@@ -372,23 +450,31 @@ const FresherDashboardPlan = (isReadOnly) => {
                   alt="lenskart"
                 />
                 <div className="fresher_placement_details_cover_container">
-                  <p className="fresher_placement_details_job_interview">
+                  <p
+                    style={{
+                      color: "white",
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      fontweight: "400",
+                    }}
+                    className="fresher_placement_details_job_interviewssss"
+                  >
                     Interview on
                   </p>
                   <p className="fresher_placement_details_job_date">
                     04 May 2023
                   </p>
-                  <Link to="/fresher-placement-details-first-step">
+                  {/* <Link to="/fresher-placement-details-first-step">
                     <img src={getHired} alt="get-hired" />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
-            <div className="fresher_placement_details_profile_bottom_container">
+            <div className="fresher_placement_details_profile_bottom_containeraaa">
               <p className="fresher_placement_details__profile_title">
                 Lenskart
               </p>
-              <div>
+              <div style={{ paddingLeft: "8px" }}>
                 <h3 className="fresher_placement_details__profile_job_title">
                   Sales Associates (Frontend Sales)
                 </h3>
@@ -413,23 +499,6 @@ const FresherDashboardPlan = (isReadOnly) => {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <div style={{ color: "rgba(14, 95, 89, 0.3)" }}>|</div>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <div className="fresher_placement_job_type_container">
-                    <p className="fresher_placement_job_type">Job Type:</p>
-                    <p className="fresher_placement_job_type_second">
-                      {" "}
-                      &nbsp;On-Site
-                    </p>
-                  </div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <div style={{ color: "rgba(14, 95, 89, 0.3)" }}>|</div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <div className="fresher_placement_job_posts_container">
-                    <p className="fresher_placement_job_posts">No. of Posts:</p>
-                    <p className="fresher_placement_job_posts_second">
-                      {" "}
-                      &nbsp;38
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -605,7 +674,10 @@ const FresherDashboardPlan = (isReadOnly) => {
                 </a>
               </div>
 
-              <div className="log-out-div">
+              <div
+                className="log-out-div"
+                style={{ marginTop: "481px !important" }}
+              >
                 <a
                   className="nav-link active"
                   data-toggle="tooltip"
@@ -633,12 +705,14 @@ const FresherDashboardPlan = (isReadOnly) => {
                   <div className="row basket-row pt-3">
                     <div className="col-lg-8">
                       <div className="dashboard-content edit_home">
-                        <h2 className="h2">Hi {userName}, </h2>
+                        <h2 className="h2">Hi Rahul, </h2>
 
-                        <p
+                        <h5
                           className="para"
                           style={{
-                            paddingTop: "15px",
+                            fontweight: "400",
+                            fontFamily: "lexend",
+                            paddingTop: "25px",
                             fontSize: "22px",
                             color: "rgba(91, 91, 91, 1)",
                           }}
@@ -646,86 +720,94 @@ const FresherDashboardPlan = (isReadOnly) => {
                           Our placement manager will get in touch with you
                           within 24 hours, meanwhile please complete your
                           profile.
-                        </p>
-
-                        <table
-                          className="table table-bordered "
-                          style={{
-                            marginBottom: "45px",
-                            boxShadow: "0px 4px 19px rgba(0, 0, 0, 0.09)",
-                            width: "100%",
-                            height: "372px",
-                          }}
-                        >
-                          <tbody>
-                            {/* <tr>
+                        </h5>
+                        <div>
+                          <table
+                            // className="table table-bordered "
+                            style={{
+                              marginTop: "20px",
+                              borderRadius: "13px",
+                              marginBottom: "45px",
+                              boxShadow: "0px 4px 19px rgba(0, 0, 0, 0.09)",
+                              width: "100%",
+                              height: "372px",
+                            }}
+                          >
+                            <tbody>
+                              {/* <tr>
                           <th scope="row">Withdrawal Fee (Obligatory)</th>
                           <th scope="row">Terms and Conditions</th>
                         </tr> */}
 
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">Full Name</td>
-                              <td className="Table-data-2-data">Rahul Roy</td>
-                              {/* <td>{capitalizedName}</td> */}
-                            </tr>
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">Phone</td>
-                              <td className="Table-data-2-data">
-                                +91-9875643210
-                              </td>
-                              {/* <td>{capitalizedName}</td> */}
-                            </tr>
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">Email</td>
-                              <td className="Table-data-2-data">
-                                {" "}
-                                Rahul.roy@gmail.com{" "}
-                              </td>
-                              {/* <td>{capitalizedName}</td> */}
-                            </tr>
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">Status</td>
-                              <td className="Table-data-2-data">
-                                <img
-                                  src={selectedStatus}
-                                  alt="selectedStatus"
-                                />
-                              </td>
-                              {/* <td>{capitalizedName}</td> */}
-                            </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">Full Name</td>
+                                <td className="Table-data-2-data">Rahul Roy</td>
+                                {/* <td>{capitalizedName}</td> */}
+                              </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">Phone</td>
+                                <td className="Table-data-2-data">
+                                  +91-9875643210
+                                </td>
+                                {/* <td>{capitalizedName}</td> */}
+                              </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">Email</td>
+                                <td className="Table-data-2-data">
+                                  {" "}
+                                  Rahul.roy@gmail.com{" "}
+                                </td>
+                                {/* <td>{capitalizedName}</td> */}
+                              </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">Status</td>
+                                <td className="Table-data-2-data">
+                                  <img
+                                    src={selectedStatus}
+                                    alt="selectedStatus"
+                                  />
+                                </td>
+                                {/* <td>{capitalizedName}</td> */}
+                              </tr>
 
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">Plan Opted</td>
-                              {/* <td><input type="text"  style={{ width: "100%", border: "0", outline: "none", background: "transparent"}}/></td> */}
-                              <td className="Table-data-2-data">
-                                Rapid Placement
-                              </td>
-                            </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">
+                                  Plan Opted
+                                </td>
+                                {/* <td><input type="text"  style={{ width: "100%", border: "0", outline: "none", background: "transparent"}}/></td> */}
+                                <td className="Table-data-2-data">
+                                  Rapid Placement
+                                </td>
+                              </tr>
 
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">
-                                Sign up Date
-                              </td>
-                              <td className="Table-data-2-data">30 May 2023</td>
-                            </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">
+                                  Sign up Date
+                                </td>
+                                <td className="Table-data-2-data">
+                                  30 May 2023
+                                </td>
+                              </tr>
 
-                            <tr className="Table-row-data">
-                              <td className="Table-data-1-data">
-                                Payment Method
-                              </td>
-                              <td className="Table-data-2-data">Card</td>
-                            </tr>
+                              <tr className="Table-row-data">
+                                <td className="Table-data-1-data">
+                                  Payment Method
+                                </td>
+                                <td className="Table-data-2-data">Card</td>
+                              </tr>
 
-                            {/* <tr> */}
-                            {/* <td>Candidate Signature:</td> */}
-                            {/* <td> */}
-                            {/* </td> */}
-                            {/* </tr> */}
-                          </tbody>
-                        </table>
+                              {/* <tr> */}
+                              {/* <td>Candidate Signature:</td> */}
+                              {/* <td> */}
+                              {/* </td> */}
+                              {/* </tr> */}
+                            </tbody>
+                          </table>
+                        </div>
                         <div
                           style={{
                             // width: "852px",
+                            padding: "30px 20px 10px 20px",
                             height: "337px",
                             boxShadow: "0px 4px 19px rgba(0, 0, 0, 0.09)",
                             background:
@@ -742,39 +824,26 @@ const FresherDashboardPlan = (isReadOnly) => {
                               </label>
                               <br />
                               <div className="select-container">
-                                <FormControl>
-                                  {/* style={{ minWidth: 120 }} */}
-                                  {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                  <Select
-                                    style={{ width: "300px", height: "35px" }}
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    // displayEmpty
-                                    // value={age}
-                                    label="Age"
-                                    // onChange={handleChanges}
-                                    className="select-container-select"
+                                <div>
+                                  <select
+                                    style={{
+                                      width: "313px",
+                                      height: "35px",
+                                      borderRadius: "5px",
+                                      background: "rgba(255, 255, 255, 1)",
+                                      // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                      border: "2px solid rgba(0, 95, 89, 1)",
+                                    }}
+                                    onChange={onOptionChangeHandler}
                                   >
-                                    <MenuItem
-                                      className="select-container-items"
-                                      value={10}
-                                    >
-                                      Ten
-                                    </MenuItem>
-                                    <MenuItem
-                                      className="select-container-items"
-                                      value={20}
-                                    >
-                                      Twenty
-                                    </MenuItem>
-                                    <MenuItem
-                                      className="select-container-items"
-                                      value={30}
-                                    >
-                                      Thirty
-                                    </MenuItem>
-                                  </Select>
-                                </FormControl>
+                                    <option>Select</option>
+                                    {optionss?.map((option, index) => {
+                                      return (
+                                        <option key={index}>{option}</option>
+                                      );
+                                    })}
+                                  </select>
+                                </div>
                               </div>
                             </div>
 
@@ -787,38 +856,26 @@ const FresherDashboardPlan = (isReadOnly) => {
                               </label>
                               <br />
                               <div className="select-container">
-                                <FormControl>
-                                  {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                  <Select
-                                    style={{ width: "300px", height: "35px" }}
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    // displayEmpty
-                                    // value={age2}
-                                    label="Age"
-                                    // onChange={handleChange1}
-                                    className="select-container-select"
+                                <div>
+                                  <select
+                                    style={{
+                                      width: "313px",
+                                      height: "35px",
+                                      borderRadius: "5px",
+                                      background: "rgba(255, 255, 255, 1)",
+                                      // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                      border: "2px solid rgba(0, 95, 89, 1)",
+                                    }}
+                                    onChange={onOptionChangeHandler1}
                                   >
-                                    <MenuItem
-                                      className="select-container-items"
-                                      value={10}
-                                    >
-                                      Ten
-                                    </MenuItem>
-                                    <MenuItem
-                                      className="select-container-items"
-                                      value={20}
-                                    >
-                                      Twenty
-                                    </MenuItem>
-                                    <MenuItem
-                                      className="select-container-items"
-                                      value={30}
-                                    >
-                                      Thirty
-                                    </MenuItem>
-                                  </Select>
-                                </FormControl>
+                                    <option>Select </option>
+                                    {optionss1?.map((option, index) => {
+                                      return (
+                                        <option key={index}>{option}</option>
+                                      );
+                                    })}
+                                  </select>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -828,38 +885,26 @@ const FresherDashboardPlan = (isReadOnly) => {
                                 <label htmlFor="stream">Stream</label>
                                 <br />
                                 <div className="select-container">
-                                  <FormControl fullWidth>
-                                    {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                    <Select
-                                      style={{ width: "300px", height: "35px" }}
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      displayEmpty
-                                      // value={age1}
-                                      label="Age"
-                                      // onChange={handleChange1}
-                                      className="select-container-select"
+                                  <div>
+                                    <select
+                                      style={{
+                                        width: "313px",
+                                        height: "35px",
+                                        borderRadius: "5px",
+                                        background: "rgba(255, 255, 255, 1)",
+                                        // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                        border: "2px solid rgba(0, 95, 89, 1)",
+                                      }}
+                                      onChange={onOptionChangeHandler2}
                                     >
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={10}
-                                      >
-                                        Ten
-                                      </MenuItem>
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={20}
-                                      >
-                                        Twenty
-                                      </MenuItem>
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={30}
-                                      >
-                                        Thirty
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
+                                      <option>Select</option>
+                                      {optionss2?.map((option, index) => {
+                                        return (
+                                          <option key={index}>{option}</option>
+                                        );
+                                      })}
+                                    </select>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -874,23 +919,41 @@ const FresherDashboardPlan = (isReadOnly) => {
                                 </label>
                                 <br />
                                 <div className="select-container">
-                                  <FormControl>
-                                    {/* style={{ minWidth: 120 }} */}
-                                    {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                    <Select
-                                      style={{ width: "300px", height: "35px" }}
-                                      //   labelId="demo-simple-select-label"
-                                      //   id="demo-simple-select"
-                                      // displayEmpty
-                                      // value={age}
-                                      //   label="Age"
-                                      // onChange={handleChanges}
-                                      className="select-container-select"
-                                    ></Select>
-                                  </FormControl>
+                                  <div>
+                                    <select
+                                      style={{
+                                        width: "313px",
+                                        height: "35px",
+                                        borderRadius: "5px",
+                                        background: "rgba(255, 255, 255, 1)",
+                                        // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                        border: "2px solid rgba(0, 95, 89, 1)",
+                                      }}
+                                      onChange={onOptionChangeHandler3}
+                                    >
+                                      <option>Select</option>
+                                      {optionss3?.map((option, index) => {
+                                        return (
+                                          <option key={index}>{option}</option>
+                                        );
+                                      })}
+                                    </select>
+                                  </div>
                                 </div>
                               </div>
                             </div>
+                          </div>
+                          <div>
+                            <img
+                              style={{
+                                width: "140px",
+                                cursor: "pointer",
+                                paddingTop: "20px",
+                                borderRadius: "10px",
+                              }}
+                              src={updateSumbit}
+                              alt="updateSumbit"
+                            />
                           </div>
                         </div>
                         <div
@@ -1021,7 +1084,7 @@ const FresherDashboardPlan = (isReadOnly) => {
                           <span></span>
                         </a>
                       </div>
-                      <div style={{ paddingTop: "30px" }}>
+                      <div style={{ paddingTop: "40px" }}>
                         <h3 className="upcoming_interviews">
                           Upcoming Interviews
                         </h3>
@@ -1134,6 +1197,58 @@ const FresherDashboardPlan = (isReadOnly) => {
                               </p>
                             </div>
                           </div>
+                          <div>
+                            <div style={{ marginTop: "30px" }}>
+                              <span
+                                style={{
+                                  fontSize: "32px",
+                                  fontWeight: "700",
+                                  color: "rgba(0, 95, 89, 1)",
+                                  fontFamily: "lexend",
+                                  lineHeight: "32px",
+                                }}
+                              >
+                                Skills
+                              </span>
+                            </div>
+                            <div
+                              className="select-container"
+                              style={{ display: "flex", marginTop: "20px" }}
+                            >
+                              <div className="ReactTags Test">
+                                <ReactTags
+                                  handleDelete={handleDelete}
+                                  handleAddition={handleAddition}
+                                  handleDrag={handleDrag}
+                                  delimiters={delimiters}
+                                  handleTagClick={handleTagClick}
+                                  inputFieldPosition="top"
+                                  minQueryLength={2}
+                                  placeholder=""
+                                  autofocus={false}
+                                  allowDeleteFromEmptyInput={true}
+                                  autocomplete={true}
+                                  readOnly={false}
+                                  allowUnique={true}
+                                  allowDragDrop={true}
+                                  allowAdditionFromPaste={true}
+                                  tags={tags}
+                                />
+                              </div>
+                              <div>
+                                <div className=" mt-1 background_detail_submitssss">
+                                  <button
+                                    type="button"
+                                    className="theme_btn edit_btn"
+                                    // onClick={handleSubmit}
+                                  >
+                                    Add
+                                    <span></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <div
                             style={
                               {
@@ -1157,39 +1272,26 @@ const FresherDashboardPlan = (isReadOnly) => {
                                 </label>
                                 <br />
                                 <div className="select-container">
-                                  <FormControl>
-                                    {/* style={{ minWidth: 120 }} */}
-                                    {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                    <Select
-                                      style={{ width: "300px", height: "35px" }}
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      // displayEmpty
-                                      // value={age}
-                                      label="Age"
-                                      // onChange={handleChanges}
-                                      className="select-container-select"
+                                  <div>
+                                    <select
+                                      style={{
+                                        width: "313px",
+                                        height: "35px",
+                                        borderRadius: "5px",
+                                        background: "rgba(255, 255, 255, 1)",
+                                        // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                        border: "2px solid rgba(0, 95, 89, 1)",
+                                      }}
+                                      onChange={onOptionChangeHandler}
                                     >
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={10}
-                                      >
-                                        Ten
-                                      </MenuItem>
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={20}
-                                      >
-                                        Twenty
-                                      </MenuItem>
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={30}
-                                      >
-                                        Thirty
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
+                                      <option>Select</option>
+                                      {optionss?.map((option, index) => {
+                                        return (
+                                          <option key={index}>{option}</option>
+                                        );
+                                      })}
+                                    </select>
+                                  </div>
                                 </div>
                               </div>
 
@@ -1202,38 +1304,26 @@ const FresherDashboardPlan = (isReadOnly) => {
                                 </label>
                                 <br />
                                 <div className="select-container">
-                                  <FormControl>
-                                    {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                    <Select
-                                      style={{ width: "300px", height: "35px" }}
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      // displayEmpty
-                                      // value={age2}
-                                      label="Age"
-                                      // onChange={handleChange1}
-                                      className="select-container-select"
+                                  <div>
+                                    <select
+                                      style={{
+                                        width: "313px",
+                                        height: "35px",
+                                        borderRadius: "5px",
+                                        background: "rgba(255, 255, 255, 1)",
+                                        // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                        border: "2px solid rgba(0, 95, 89, 1)",
+                                      }}
+                                      onChange={onOptionChangeHandler1}
                                     >
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={10}
-                                      >
-                                        Ten
-                                      </MenuItem>
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={20}
-                                      >
-                                        Twenty
-                                      </MenuItem>
-                                      <MenuItem
-                                        className="select-container-items"
-                                        value={30}
-                                      >
-                                        Thirty
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
+                                      <option>Select </option>
+                                      {optionss1?.map((option, index) => {
+                                        return (
+                                          <option key={index}>{option}</option>
+                                        );
+                                      })}
+                                    </select>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -1243,41 +1333,29 @@ const FresherDashboardPlan = (isReadOnly) => {
                                   <label htmlFor="stream">Stream</label>
                                   <br />
                                   <div className="select-container">
-                                    <FormControl fullWidth>
-                                      {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                      <Select
+                                    <div>
+                                      <select
                                         style={{
-                                          width: "300px",
+                                          width: "313px",
                                           height: "35px",
+                                          borderRadius: "5px",
+                                          background: "rgba(255, 255, 255, 1)",
+                                          // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                          border:
+                                            "2px solid rgba(0, 95, 89, 1)",
                                         }}
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        displayEmpty
-                                        // value={age1}
-                                        label="Age"
-                                        // onChange={handleChange1}
-                                        className="select-container-select"
+                                        onChange={onOptionChangeHandler2}
                                       >
-                                        <MenuItem
-                                          className="select-container-items"
-                                          value={10}
-                                        >
-                                          Ten
-                                        </MenuItem>
-                                        <MenuItem
-                                          className="select-container-items"
-                                          value={20}
-                                        >
-                                          Twenty
-                                        </MenuItem>
-                                        <MenuItem
-                                          className="select-container-items"
-                                          value={30}
-                                        >
-                                          Thirty
-                                        </MenuItem>
-                                      </Select>
-                                    </FormControl>
+                                        <option>Select</option>
+                                        {optionss2?.map((option, index) => {
+                                          return (
+                                            <option key={index}>
+                                              {option}
+                                            </option>
+                                          );
+                                        })}
+                                      </select>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1292,23 +1370,29 @@ const FresherDashboardPlan = (isReadOnly) => {
                                   </label>
                                   <br />
                                   <div className="select-container">
-                                    <FormControl>
-                                      {/* style={{ minWidth: 120 }} */}
-                                      {/* <InputLabel className="select-container-label" id="demo-simple-select-label">Select</InputLabel> */}
-                                      <Select
+                                    <div>
+                                      <select
                                         style={{
-                                          width: "300px",
+                                          width: "313px",
                                           height: "35px",
+                                          borderRadius: "5px",
+                                          background: "rgba(255, 255, 255, 1)",
+                                          // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                                          border:
+                                            "2px solid rgba(0, 95, 89, 1)",
                                         }}
-                                        //   labelId="demo-simple-select-label"
-                                        //   id="demo-simple-select"
-                                        // displayEmpty
-                                        // value={age}
-                                        //   label="Age"
-                                        // onChange={handleChanges}
-                                        className="select-container-select"
-                                      ></Select>
-                                    </FormControl>
+                                        onChange={onOptionChangeHandler3}
+                                      >
+                                        <option>Select</option>
+                                        {optionss3?.map((option, index) => {
+                                          return (
+                                            <option key={index}>
+                                              {option}
+                                            </option>
+                                          );
+                                        })}
+                                      </select>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1400,7 +1484,7 @@ const FresherDashboardPlan = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>Upload PANS </p>
+                                      <p>Cancelled cheque</p>
                                       {selectedFile2 &&
                                       selectedFile2.type ===
                                         "application/pdf" ? (
@@ -1427,58 +1511,6 @@ const FresherDashboardPlan = (isReadOnly) => {
                                     id="exampleFormControlFile2"
                                     onChange={onChangeHandler2}
                                     name="Upload_PAN"
-                                  />
-                                </div>
-                              </div>
-
-                              <div
-                                className={`upload-buttons ${
-                                  fileSelected3 ? "selected" : ""
-                                } ${fileUploaded3 ? "after-upload" : ""}`}
-                              >
-                                <div className="form-group">
-                                  <label htmlFor="exampleFormControlFile4">
-                                    {fileUploaded3 === true ? (
-                                      <img
-                                        src={UploadWhite}
-                                        alt=""
-                                        className="white-img"
-                                      />
-                                    ) : (
-                                      <img
-                                        src={Upload}
-                                        alt=""
-                                        className="green-img"
-                                      />
-                                    )}
-                                    <div className="upload-msg">
-                                      <p>Cancelled cheque</p>
-                                      {selectedFile3 &&
-                                      selectedFile3.type ===
-                                        "application/pdf" ? (
-                                        <p className="parag">
-                                          {" "}
-                                          <span> ({selectedFile3.name})</span>
-                                        </p>
-                                      ) : (
-                                        <p className="parag"></p>
-                                      )}
-                                      {!selectedFile3 && submitClicked && (
-                                        <p
-                                          style={{ color: "red" }}
-                                          className="formErrors"
-                                        >
-                                          Please select a file*
-                                        </p>
-                                      )}
-                                    </div>
-                                  </label>
-                                  <input
-                                    type="file"
-                                    className="form-control-file"
-                                    id="exampleFormControlFile4"
-                                    onChange={onChangeHandler3}
-                                    name="cancelled_cheque"
                                   />
                                 </div>
                               </div>
@@ -1559,7 +1591,7 @@ const FresherDashboardPlan = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>Graduation degree</p>
+                                      <p>Front page of Bank Passbook</p>
                                       {selectedFile5 &&
                                       selectedFile5.type ===
                                         "application/pdf" ? (
@@ -1589,15 +1621,86 @@ const FresherDashboardPlan = (isReadOnly) => {
                                   />
                                 </div>
                               </div>
-
+                            </div>
+                            <div className="mt-3 background_detail_submit">
+                              {/* <button
+                                type="button"
+                                className="theme_btn edit_btn"
+                                onClick={handleSubmit}
+                              >
+                                Save
+                                <span></span>
+                              </button> */}
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p className="h2Identication">Education *</p>
+                            </div>
+                          </div>
+                          <div className="row upload_docs_wrappper">
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
                               <div
                                 className={`upload-buttons ${
-                                  fileSelected6 ? "selected" : ""
-                                } ${fileUploaded6 ? "after-upload" : ""}`}
+                                  fileSelected1 ? "selected" : ""
+                                } ${fileUploaded1 ? "after-upload" : ""}`}
                               >
                                 <div className="form-group">
-                                  <label htmlFor="exampleFormControlFile7">
-                                    {fileUploaded6 === true ? (
+                                  <label htmlFor="exampleFormControlFile1">
+                                    {fileUploaded1 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+                                    <div className="upload-msg">
+                                      <p>12th_standard.png </p>
+                                      {selectedFile1 &&
+                                      selectedFile1.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span>({selectedFile1.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile1 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors"
+                                        >
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile1"
+                                    onChange={onChangeHandler1}
+                                    name="aadhar_card"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected2 ? "selected" : ""
+                                } ${fileUploaded2 ? "after-upload" : ""}`}
+                              >
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile2">
+                                    {fileUploaded2 === true ? (
                                       <img
                                         src={UploadWhite}
                                         alt=""
@@ -1612,46 +1715,135 @@ const FresherDashboardPlan = (isReadOnly) => {
                                     )}
 
                                     <div className="upload-msg">
-                                      <p>PG degree (If any)</p>
-                                      {selectedFile6 &&
-                                      selectedFile6.type ===
+                                      <p>Upload PAN </p>
+                                      {selectedFile2 &&
+                                      selectedFile2.type ===
                                         "application/pdf" ? (
                                         <p className="parag">
                                           {" "}
-                                          <span> ({selectedFile6.name})</span>
+                                          <span> ({selectedFile2.name})</span>
                                         </p>
                                       ) : (
                                         <p className="parag"></p>
                                       )}
-                                      {/* {!selectedFile6 && submitClicked && (
+                                      {!selectedFile2 && submitClicked && (
                                         <p
                                           style={{ color: "red" }}
-                                          className="formErrors">
+                                          className="formErrors"
+                                        >
                                           Please select a file*
                                         </p>
-                                      )} */}
+                                      )}
                                     </div>
                                   </label>
                                   <input
                                     type="file"
                                     className="form-control-file"
-                                    id="exampleFormControlFile7"
-                                    onChange={onChangeHandler6}
-                                    name="post_graduate_certificate"
+                                    id="exampleFormControlFile2"
+                                    onChange={onChangeHandler2}
+                                    name="Upload_PAN"
                                   />
                                 </div>
                               </div>
                             </div>
-                            <div className="mt-3 background_detail_submit">
-                              {/* <button
+                            <div className="mt-3 background_detail_submitssss">
+                              <button
                                 type="button"
                                 className="theme_btn edit_btn"
-                                onClick={handleSubmit}
+                                // onClick={handleSubmit}
                               >
-                                Save
+                                Add
                                 <span></span>
-                              </button> */}
+                              </button>
                             </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p className="h2Identication">
+                                Skills / Certification
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row upload_docs_wrappper">
+                            <div className="col-lg-6 col-md-8 col-sm-12 upload_space">
+                              <div
+                                className={`upload-buttons ${
+                                  fileSelected1 ? "selected" : ""
+                                } ${fileUploaded1 ? "after-upload" : ""}`}
+                              >
+                                <div className="form-group">
+                                  <label htmlFor="exampleFormControlFile1">
+                                    {fileUploaded1 === true ? (
+                                      <img
+                                        src={UploadWhite}
+                                        alt=""
+                                        className="white-img"
+                                      />
+                                    ) : (
+                                      <img
+                                        src={Upload}
+                                        alt=""
+                                        className="green-img"
+                                      />
+                                    )}
+                                    <div className="upload-msg">
+                                      <p>UI Master course.p...</p>
+                                      {selectedFile1 &&
+                                      selectedFile1.type ===
+                                        "application/pdf" ? (
+                                        <p className="parag">
+                                          {" "}
+                                          <span>({selectedFile1.name})</span>
+                                        </p>
+                                      ) : (
+                                        <p className="parag"></p>
+                                      )}
+                                      {!selectedFile1 && submitClicked && (
+                                        <p
+                                          style={{ color: "red" }}
+                                          className="formErrors"
+                                        >
+                                          Please select a file*
+                                        </p>
+                                      )}
+                                    </div>
+                                  </label>
+                                  <input
+                                    type="file"
+                                    className="form-control-file"
+                                    id="exampleFormControlFile1"
+                                    onChange={onChangeHandler1}
+                                    name="aadhar_card"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="mt-3 background_detail_submitssss">
+                              <button
+                                type="button"
+                                className="theme_btn edit_btn"
+                                // onClick={handleSubmit}
+                              >
+                                Add
+                                <span></span>
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            style={{
+                              paddingTop: "50px",
+                              display: "flex",
+                              gap: "30px",
+                              paddingLeft: "30px",
+                            }}
+                          >
+                            <span>
+                              <img src={cancelButton} alt="cancelButton" />
+                            </span>
+                            <span>
+                              <img src={submitbutton} alt="submitbutton" />
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -2394,10 +2586,10 @@ const FresherDashboardPlan = (isReadOnly) => {
                                             col-lg-10"
                       >
                         <div className="dashboard-content ml-3 mb-3">
-                          <h2 className="h2">Your roadmap</h2>
+                          <h2 className="h2">Your roadmaps</h2>
                         </div>
                         <div className="">
-                          <div className="timelineqq">
+                          <div className="timeline">
                             <div className="timeline-container warning">
                               <div className="timeline-icon"></div>
                               <div className="timeline-body">

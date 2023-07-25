@@ -1159,7 +1159,16 @@ const FresherPlacementDetailsFirstStep = () => {
                     }}
                     onChange={onOptionChangeHandler}
                   >
-                    <option>Select Location</option>
+                    <option
+                      style={{
+                        fontSize: "18px",
+                        fontWeight: "400",
+                        fontFamily: "lexend",
+                        color: "#0e5f59",
+                      }}
+                    >
+                      Select Location
+                    </option>
                     {options?.map((option, index) => {
                       return <option key={index}>{option}</option>;
                     })}
@@ -1176,7 +1185,7 @@ const FresherPlacementDetailsFirstStep = () => {
                     height: "35px",
                     gap: "20px",
                     width: "188px",
-                    border: "1px solid red",
+                    border: "2px solid rgba(0, 95, 89, 1)",
                     display: "flex",
                   }}
                 >
@@ -1193,7 +1202,7 @@ const FresherPlacementDetailsFirstStep = () => {
                       selected={dob}
                       // maxDate={new Date("2015-12-31")}
                       onChange={(date) => setDob(date)}
-                      placeholderText="Select sdate"
+                      // placeholderText="Select sdate"
                       // popperPlacement="top"
                     />
                   </div>
@@ -1224,6 +1233,9 @@ const FresherPlacementDetailsFirstStep = () => {
                         // background:
                         // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
                         border: "2px solid rgba(0, 95, 89, 1)",
+                        color: "rgba(0, 95, 89, 1)",
+                        fontSize: "18px",
+                        fontWeight: "400",
                       }}
                       onChange={onOptionChangeHandler2}
                     >
@@ -1238,6 +1250,9 @@ const FresherPlacementDetailsFirstStep = () => {
                         height: "35px",
                         background: "rgba(255, 255, 255, 1)",
                         borderRadius: "5px",
+                        color: "rgba(0, 95, 89, 1)",
+                        fontSize: "18px",
+                        fontWeight: "400",
                         // background:
                         // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
                         border: "2px solid rgba(0, 95, 89, 1)",
