@@ -929,7 +929,7 @@ const FresherPlacementDetailsFirstStep = () => {
                     // lineHeight: "25px",
                   }}
                 >
-                  Slot-1
+                  Slot-2
                 </span>
                 <span
                   style={{
@@ -972,7 +972,7 @@ const FresherPlacementDetailsFirstStep = () => {
                     // lineHeight: "25px",
                   }}
                 >
-                  Slot-1
+                  Slot-3
                 </span>
                 <span
                   style={{
@@ -1136,142 +1136,269 @@ const FresherPlacementDetailsFirstStep = () => {
             <div
               style={{
                 // width: "1167px",
-                padding: "10px 0px 10px 0px",
-                display: "flex",
-                height: "116px",
-                justifyContent: "space-around",
+
                 background: "rgba(14, 95, 89, 0.05)",
               }}
             >
-              <div>
-                <p className="under-main-section">
-                  Please confirm your location for interview
-                </p>
+              <div
+                style={{
+                  padding: "10px 0px 10px 0px",
+                  display: "flex",
+                  height: "116px",
+                  justifyContent: "space-around",
+                }}
+              >
                 <div>
-                  <select
-                    style={{
-                      width: "313px",
-                      height: "35px",
-                      borderRadius: "5px",
-                      background: "rgba(255, 255, 255, 1)",
-                      // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
-                      border: "2px solid rgba(0, 95, 89, 1)",
-                    }}
-                    onChange={onOptionChangeHandler}
-                  >
-                    <option
-                      style={{
-                        fontSize: "17px",
-                        fontWeight: "400",
-                        fontFamily: "lexend",
-                        color: "#0e5f59",
-                      }}
-                    >
-                      Select Location
-                    </option>
-                    {options?.map((option, index) => {
-                      return <option key={index}>{option}</option>;
-                    })}
-                  </select>
-                </div>
-              </div>
-              <div style={{ paddingRight: "60px" }}>
-                <p className="under-main-section">
-                  {" "}
-                  Pick suitable date and time for interview
-                </p>
-                <div
-                  style={{
-                    height: "35px",
-                    gap: "20px",
-                    width: "188px",
-                    border: "2px solid rgba(0, 95, 89, 1)",
-                    display: "flex",
-                  }}
-                >
+                  <p className="under-main-section">
+                    Please confirm your location for interview
+                  </p>
                   <div>
-                    <DatePicker
-                      style={{
-                        background: "rgba(255, 255, 255, 1)",
-                        height: "35px !important",
-                        // width: "200px",
-                      }}
-                      className="custom-datepicker"
-                      id="dob-input"
-                      dateFormat="dd/MM/yyyy"
-                      selected={dob}
-                      // maxDate={new Date("2015-12-31")}
-                      onChange={(date) => setDob(date)}
-                      // placeholderText="Select sdate"
-                      // popperPlacement="top"
-                    />
-                  </div>
-                  <div style={{ display: "flex", gap: "15px" }}>
                     <select
                       style={{
-                        width: "60px",
+                        width: "313px",
                         height: "35px",
                         borderRadius: "5px",
                         background: "rgba(255, 255, 255, 1)",
-                        // background:
-                        // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
-                        border: "2px solid rgba(0, 95, 89, 1)",
-                      }}
-                      onChange={onOptionChangeHandler1}
-                    >
-                      {/* <option>Select Location</option> */}
-                      {hour.map((option, index) => {
-                        return <option key={index}>{option}</option>;
-                      })}
-                    </select>
-                    <select
-                      style={{
-                        width: "60px",
-                        background: "rgba(255, 255, 255, 1)",
-                        height: "35px",
-                        borderRadius: "5px",
-                        // background:
-                        // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
-                        border: "2px solid rgba(0, 95, 89, 1)",
-                        color: "rgba(0, 95, 89, 1)",
-                        fontSize: "18px",
-                        fontWeight: "400",
-                      }}
-                      onChange={onOptionChangeHandler2}
-                    >
-                      {/* <option>Select Location</option> */}
-                      {minutes.map((option, index) => {
-                        return <option key={index}>{option}</option>;
-                      })}
-                    </select>
-                    <select
-                      style={{
-                        width: "60px",
-                        height: "35px",
-                        background: "rgba(255, 255, 255, 1)",
-                        borderRadius: "5px",
-                        color: "rgba(0, 95, 89, 1)",
-                        fontSize: "18px",
-                        fontWeight: "400",
-                        // background:
                         // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
                         border: "2px solid rgba(0, 95, 89, 1)",
                       }}
                       onChange={onOptionChangeHandler}
                     >
-                      {/* <option>Select Location</option> */}
-                      {Timeimg.map((option, index) => {
+                      <option
+                        style={{
+                          fontSize: "17px",
+                          fontWeight: "400",
+                          fontFamily: "lexend",
+                          color: "#0e5f59",
+                        }}
+                      >
+                        Select Location
+                      </option>
+                      {options?.map((option, index) => {
                         return <option key={index}>{option}</option>;
                       })}
                     </select>
                   </div>
                 </div>
+                <div style={{ paddingRight: "60px" }}>
+                  <p className="under-main-section">
+                    {" "}
+                    Pick suitable date and time for interview
+                  </p>
+                  <div
+                    style={{
+                      height: "35px",
+                      gap: "20px",
+                      width: "188px",
+                      border: "2px solid rgba(0, 95, 89, 1)",
+                      display: "flex",
+                    }}
+                  >
+                    <div>
+                      <DatePicker
+                        style={{
+                          background: "rgba(255, 255, 255, 1)",
+                          height: "35px !important",
+                          // width: "200px",
+                        }}
+                        className="custom-datepicker"
+                        id="dob-input"
+                        dateFormat="dd/MM/yyyy"
+                        selected={dob}
+                        // maxDate={new Date("2015-12-31")}
+                        onChange={(date) => setDob(date)}
+                        // placeholderText="Select sdate"
+                        // popperPlacement="top"
+                      />
+                    </div>
+                    <div style={{ display: "flex", gap: "15px" }}>
+                      <select
+                        style={{
+                          width: "60px",
+                          height: "35px",
+                          borderRadius: "5px",
+                          background: "rgba(255, 255, 255, 1)",
+                          // background:
+                          // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                          border: "2px solid rgba(0, 95, 89, 1)",
+                        }}
+                        onChange={onOptionChangeHandler1}
+                      >
+                        {/* <option>Select Location</option> */}
+                        {hour.map((option, index) => {
+                          return <option key={index}>{option}</option>;
+                        })}
+                      </select>
+                      <select
+                        style={{
+                          width: "60px",
+                          background: "rgba(255, 255, 255, 1)",
+                          height: "35px",
+                          borderRadius: "5px",
+                          // background:
+                          // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                          border: "2px solid rgba(0, 95, 89, 1)",
+                          color: "rgba(0, 95, 89, 1)",
+                          fontSize: "18px",
+                          fontWeight: "400",
+                        }}
+                        onChange={onOptionChangeHandler2}
+                      >
+                        {/* <option>Select Location</option> */}
+                        {minutes.map((option, index) => {
+                          return <option key={index}>{option}</option>;
+                        })}
+                      </select>
+                      <select
+                        style={{
+                          width: "60px",
+                          height: "35px",
+                          background: "rgba(255, 255, 255, 1)",
+                          borderRadius: "5px",
+                          color: "rgba(0, 95, 89, 1)",
+                          fontSize: "18px",
+                          fontWeight: "400",
+                          // background:
+                          // "linear-gradient(180deg, rgba(254, 205, 8, 0.07) 50%, rgba(14, 95, 89, 0.19) 100%)",
+                          border: "2px solid rgba(0, 95, 89, 1)",
+                        }}
+                        onChange={onOptionChangeHandler}
+                      >
+                        {/* <option>Select Location</option> */}
+                        {Timeimg.map((option, index) => {
+                          return <option key={index}>{option}</option>;
+                        })}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ paddingTop: "35px" }}>
+                  <img src={addTimeLocation} alt="addTimeLocation" />
+                </div>
               </div>
-              <div style={{ paddingTop: "35px" }}>
-                <img src={addTimeLocation} alt="addTimeLocation" />
+              <div style={{ padding: "10px 0px 50px 0px" }}>
+                <div
+                  style={{
+                    marginTop: "15px",
+                    borderRadius: "6px",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                    border: "1px solid rgba(14, 95, 89, 0.3)",
+                    width: "757px",
+                    background: "rgba(14, 95, 89, 0.3) ",
+                    height: "51px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      fontFamily: "lexend",
+                      // lineHeight: "25px",
+                    }}
+                  >
+                    Slot-1
+                  </span>
+                  <span
+                    style={{
+                      border: "1px solid rgba(14, 95, 89, 0.3)",
+                      height: "30px",
+                    }}
+                  ></span>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      fontFamily: "lexend",
+                      lineHeight: "25px",
+                    }}
+                  >
+                    Deverabisanahalli, On Tueday, 06 June 2023, 4:00 PM
+                  </span>
+                </div>
+                <div
+                  style={{
+                    marginTop: "15px",
+                    borderRadius: "6px",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                    border: "1px solid rgba(14, 95, 89, 0.3)",
+                    width: "757px",
+                    background: "rgba(14, 95, 89, 0.3) ",
+                    height: "51px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      fontFamily: "lexend",
+                      // lineHeight: "25px",
+                    }}
+                  >
+                    Slot-2
+                  </span>
+                  <span
+                    style={{
+                      border: "1px solid rgba(14, 95, 89, 0.3)",
+                      height: "30px",
+                    }}
+                  ></span>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      fontFamily: "lexend",
+                      lineHeight: "25px",
+                    }}
+                  >
+                    Deverabisanahalli, On Tueday, 06 June 2023, 4:00 PM
+                  </span>
+                </div>
+                <div
+                  style={{
+                    marginTop: "15px",
+                    borderRadius: "6px",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                    border: "1px solid rgba(14, 95, 89, 0.3)",
+                    width: "757px",
+                    background: "rgba(14, 95, 89, 0.3) ",
+                    height: "51px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      fontFamily: "lexend",
+                      // lineHeight: "25px",
+                    }}
+                  >
+                    Slot-3
+                  </span>
+                  <span
+                    style={{
+                      border: "1px solid rgba(14, 95, 89, 0.3)",
+                      height: "30px",
+                    }}
+                  ></span>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "600",
+                      fontFamily: "lexend",
+                      lineHeight: "25px",
+                    }}
+                  >
+                    Deverabisanahalli, On Tueday, 06 June 2023, 4:00 PM
+                  </span>
+                </div>
               </div>
             </div>
-
             <div>
               <Checkbox />
               <img src={checkBoxFresher} alt="checkBoxFresher" />

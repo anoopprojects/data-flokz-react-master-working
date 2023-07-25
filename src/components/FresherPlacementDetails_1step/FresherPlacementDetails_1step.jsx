@@ -10,10 +10,39 @@ import placementDetailsIcon from "../img/placement_details_first_icon.png";
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
 import backButton from "../img/back_button.png";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import next from "../img/next.png";
+import PropTypes from "prop-types";
+import { styled } from "@mui/material/styles";
+import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+
+const StyledFormControlLabel = styled((props) => (
+  <FormControlLabel {...props} />
+))(({ theme, checked }) => ({
+  ".MuiFormControlLabel-label": checked && {
+    color: "#0e5f59",
+  },
+}));
+
+function MyFormControlLabel(props) {
+  const radioGroup = useRadioGroup();
+
+  let checked = false;
+
+  if (radioGroup) {
+    checked = radioGroup.value === props.value;
+  }
+
+  return <StyledFormControlLabel checked={checked} {...props} />;
+}
+
+MyFormControlLabel.propTypes = {
+  /**
+   * The value of the component.
+   */
+  value: PropTypes.any,
+};
 
 const FresherPlacementDetailsFirstStep = () => {
   const changeRating = () => {};
@@ -145,16 +174,21 @@ const FresherPlacementDetailsFirstStep = () => {
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="Yes"
-              name="radio-buttons-group"
+              // name="radio-buttons-group"
+              name="use-radio-group"
               style={{ display: "contents" }}
             >
               <div>
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <MyFormControlLabel
+                  value="Yes"
+                  control={<Radio />}
+                  label="Yes"
+                />
 
                 {/* </RadioGroup> */}
               </div>
               <div>
-                <FormControlLabel value="No" control={<Radio />} label="No" />
+                <MyFormControlLabel value="No" control={<Radio />} label="No" />
                 {/* <input type="radio" name="firstNo" id="firstNo" /> */}
                 {/* <label htmlFor="firstNo">No</label> */}
               </div>
@@ -172,16 +206,21 @@ const FresherPlacementDetailsFirstStep = () => {
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="Yes"
-              name="radio-buttons-group"
+              // name="radio-buttons-group"
+              name="use-radio-group"
               style={{ display: "contents" }}
             >
               <div>
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <MyFormControlLabel
+                  value="Yes"
+                  control={<Radio />}
+                  label="Yes"
+                />
 
                 {/* </RadioGroup> */}
               </div>
               <div>
-                <FormControlLabel value="No" control={<Radio />} label="No" />
+                <MyFormControlLabel value="No" control={<Radio />} label="No" />
                 {/* <input type="radio" name="firstNo" id="firstNo" /> */}
                 {/* <label htmlFor="firstNo">No</label> */}
               </div>
@@ -221,16 +260,21 @@ const FresherPlacementDetailsFirstStep = () => {
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="Yes"
-              name="radio-buttons-group"
+              name="use-radio-group"
+              // name="radio-buttons-group"
               style={{ display: "contents" }}
             >
               <div>
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <MyFormControlLabel
+                  value="Yes"
+                  control={<Radio />}
+                  label="Yes"
+                />
 
                 {/* </RadioGroup> */}
               </div>
               <div>
-                <FormControlLabel value="No" control={<Radio />} label="No" />
+                <MyFormControlLabel value="No" control={<Radio />} label="No" />
                 {/* <input type="radio" name="firstNo" id="firstNo" /> */}
                 {/* <label htmlFor="firstNo">No</label> */}
               </div>
@@ -251,16 +295,21 @@ const FresherPlacementDetailsFirstStep = () => {
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="Yes"
-              name="radio-buttons-group"
+              // name="radio-buttons-group"
+              name="use-radio-group"
               style={{ display: "contents" }}
             >
               <div>
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <MyFormControlLabel
+                  value="Yes"
+                  control={<Radio />}
+                  label="Yes"
+                />
 
                 {/* </RadioGroup> */}
               </div>
               <div>
-                <FormControlLabel value="No" control={<Radio />} label="No" />
+                <MyFormControlLabel value="No" control={<Radio />} label="No" />
                 {/* <input type="radio" name="firstNo" id="firstNo" /> */}
                 {/* <label htmlFor="firstNo">No</label> */}
               </div>
@@ -281,16 +330,21 @@ const FresherPlacementDetailsFirstStep = () => {
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="Yes"
-              name="radio-buttons-group"
+              // name="radio-buttons-group"
+              name="use-radio-group"
               style={{ display: "contents" }}
             >
               <div>
-                <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
+                <MyFormControlLabel
+                  value="Yes"
+                  control={<Radio />}
+                  label="Yes"
+                />
 
                 {/* </RadioGroup> */}
               </div>
               <div>
-                <FormControlLabel value="No" control={<Radio />} label="No" />
+                <MyFormControlLabel value="No" control={<Radio />} label="No" />
                 {/* <input type="radio" name="firstNo" id="firstNo" /> */}
                 {/* <label htmlFor="firstNo">No</label> */}
               </div>
