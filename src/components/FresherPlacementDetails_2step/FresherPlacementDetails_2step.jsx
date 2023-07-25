@@ -1161,7 +1161,7 @@ const FresherPlacementDetailsFirstStep = () => {
                   >
                     <option
                       style={{
-                        fontSize: "18px",
+                        fontSize: "17px",
                         fontWeight: "400",
                         fontFamily: "lexend",
                         color: "#0e5f59",
